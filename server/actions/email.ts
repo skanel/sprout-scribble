@@ -23,9 +23,9 @@ export const sendTwoFactorTokenByEmail = async (
 export const sendVerificationEmail = async (email: string, token: string) => {
   const confirmLink = `${domain}/auth/new-verification?token=${token}`
   const { data, error } = await resend.emails.send({
-    from: "deved@sproutscribble.store",
+    from: "soengkanel@gmail.com",
     to: email,
-    subject: "Sproud and Scribble - Confirmation Email",
+    subject: "NGKO Store - Confirmation Email",
     html: `<p>Click to <a href='${confirmLink}'>confirm your email</a></p>`,
   })
   if (error) return console.log(error)

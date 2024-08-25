@@ -5,7 +5,7 @@ import { createSafeActionClient } from "next-safe-action"
 import Stripe from "stripe"
 import { auth } from "../auth"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET!)
+const stripe = new Stripe(`${process.env.STRIPE_SECRET!}`)
 const action = createSafeActionClient()
 
 export const createPaymentIntent = action(

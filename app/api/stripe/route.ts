@@ -7,7 +7,7 @@ import Stripe from "stripe"
 // export const config = { api: { bodyParser: false } };
 
 export async function POST(req: NextRequest) {
-  const stripe = new Stripe(process.env.STRIPE_SECRET || "", {
+  const stripe = new Stripe(`${process.env.STRIPE_SECRET}` || "", {
     apiVersion: "2024-04-10",
   })
   const sig = req.headers.get("stripe-signature") || ""
